@@ -1,0 +1,51 @@
+﻿làm web bằng dùng filter as controller
+
+tạo 1 website làm multiple-choice
+
+mỗi câu hỏi gồm 4 câu trả lời & 1 câu đúng
+
+có nhiều Subject, ^~ subject : gồm câu hỏi & thời gian trả lời có thể chỉnh sửa
+có thể CRUD Questions
+
+1. Registration : tạo account để take the quiz
+account : email, name, password, role, status (email as ID)
+default ROLE :  student
+default status : new
+password ecrypted using SHA-256
+
+2. Login 
+Email, Password ->  check ok -> grant permission. ngược lại thì thông báo not found
+gồm login & welcome function
+
+3. Search Question(ADMIN only)
+Search by : name, status of question or subject
+list 1st 20 items order by name, (pagination required)
+giao diện phải hiển thị question của ^~ subject
+^~ question, answers & trả lời đúng phải được show ra
+
+4. tạo question (ADMIN only)
+question : id, content, answer, correct_ans, createDate, subjectID, status .v.v
+sau khi tạo -> screen must refresh
+
+5. Update (ADMIN only)
+update : content, answers, correct_ans, subject
+refresh is must
+
+6. Delete (ADMIN only)
+delete -> change status to false
+refresh is must
+
+7. Take a quiz(STUDENT only)
+có counter
+random chọn N question in bank
+hiển thị question & answer tương ứng
+nhấn chọn question và next question
+user nhấn finishBtn hoặc khi hết tgian
+
+hiển thị kết quả gồm : số câu trả lời đúng và số điểm
+và quiz detail & kết quả sẽ được lưu về database
+
+8. show history
+search by category, subject name
+pagination
+
